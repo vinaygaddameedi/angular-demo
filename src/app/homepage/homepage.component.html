@@ -28,13 +28,13 @@
 
 
 
-<div>
+<mat-card>
   <label for="city">Select a City:</label>
   <select id="city" [(ngModel)]="selectedCity" (change)="onCityChange($event)">
     <option *ngFor="let city of cities" [value]="city.value">
       {{ city.name }}
     </option>
   </select>
-</div>
+</mat-c[ariaRoleDescription]="">
 
 <p *ngIf="selectedCity">You selected city with value: {{ selectedCity }}</p>
