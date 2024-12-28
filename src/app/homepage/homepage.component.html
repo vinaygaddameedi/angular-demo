@@ -1,0 +1,40 @@
+<mat-card class="example-card">
+  structural directives
+  <div class="divcontainer" *ngIf="toggle">I am div</div>
+  <button class="button" (click)="toggleButton()">
+    {{ toggle ? "hide" : "show" }}
+  </button>
+</mat-card>
+<br />
+<mat-card> 
+<h1> ngfor loop</h1>
+<div *ngFor="let items of fruites">
+  <div>{{ items }}</div>
+</div>
+</mat-card>
+<br />
+
+<input type="text" [(ngModel)]="value" />
+
+<p>selected value {{ value }}</p>
+
+<button class="btn button-notice" (click)="displayNotice()" > show Notice</button>
+
+<div class="info-container notice" *ngIf="display">
+  <h3>This is important Notice!</h3>
+  <p>This is notice issued for all website users.</p>
+</div>
+
+
+
+
+<div>
+  <label for="city">Select a City:</label>
+  <select id="city" [(ngModel)]="selectedCity" (change)="onCityChange($event)">
+    <option *ngFor="let city of cities" [value]="city.value">
+      {{ city.name }}
+    </option>
+  </select>
+</div>
+
+<p *ngIf="selectedCity">You selected city with value: {{ selectedCity }}</p>
